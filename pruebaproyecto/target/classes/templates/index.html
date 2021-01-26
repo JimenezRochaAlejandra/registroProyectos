@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registro de proyectos</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-4">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Proyecto</th>
+					<th>Tipo de gestion</th>
+					<th>Fecha</th>
+					<th>Descripción</th>
+					<th>Cantidad</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="proyecto:${proyectos}">
+					<td th:text=${proyecto.id}></td>
+					<td th:text=${proyecto.nombre}></td>
+					<td th:text=${proyecto.tipoGestion}></td>
+					<td th:text=${proyecto.fecha}></td>
+					<td th:text=${proyecto.descripcion}></td>
+					<td th:text=${proyecto.cantidad}></td>
+					<td>
+					<a class="btn btn-warning">Agregar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
